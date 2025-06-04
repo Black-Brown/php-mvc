@@ -2,12 +2,9 @@
 
 use lib\route;
 
-route::get('/', function() {
-    return array(
-        'message' => 'Hello, world!',
-        'status' => 'success'
-    );
-});
+use app\Controllers\HomeController;
+
+route::get('/', [HomeController::class, 'index']);
 
 route::get('/about', function() {
     return 'Hello, about page!';
