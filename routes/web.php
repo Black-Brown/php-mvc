@@ -3,15 +3,22 @@
 use lib\route;
 
 route::get('/', function() {
-    echo 'Hello, principal page!';
+    return array(
+        'message' => 'Hello, world!',
+        'status' => 'success'
+    );
 });
 
 route::get('/about', function() {
-    echo 'Hello, about page!';
+    return 'Hello, about page!';
 });
 
 route::get('/contact', function() {
-    echo 'Hello, contact page!';
+    return 'Hello, contact page!';
+});
+
+route::get('/products/:slug', function($slug) {
+    return "Hello, product id: " . $slug . '!';
 });
 
 route::run();                                    
