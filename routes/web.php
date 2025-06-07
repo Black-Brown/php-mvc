@@ -2,7 +2,7 @@
 
 use lib\route;
 
-use app\Controllers\HomeController;
+use App\Controllers\HomeController;
 
 route::get('/', [HomeController::class, 'index']);
 
